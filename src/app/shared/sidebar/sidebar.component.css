@@ -1,6 +1,6 @@
 .side-section{
-    position: relative;
-    top: -1.4rem;
+    position: absolute;
+    top: 7rem;
     width: 6rem;
 }
 .list{
@@ -14,18 +14,9 @@
 hr{
     width: 5rem;
 }
-@media screen and (min-width: 425px) {
+
+@media screen and (min-width: 768px) {
     .side-section{
-        top: -2.3rem;
-    }
-}
-@media screen and (min-width: 425px) {
-    .side-section{
-        top: -2.25rem;
-    }
-}
-@media screen and (min-width: 576px) {
-    .side-section{
-        top: -2.1rem;
+        top: 19rem;
     }
 }

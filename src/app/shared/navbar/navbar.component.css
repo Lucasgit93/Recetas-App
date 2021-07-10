@@ -9,11 +9,12 @@ li{
     list-style: none;
     margin-top: 1.5rem;
     cursor: pointer;
+    padding: 2px 10px 2px 10px;
 }
 
 hr{
     width: 15rem;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 .active, li:hover{
     background-color: #870D01;

@@ -1,0 +1,15 @@
+.img{
+    height: 7rem;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: -99;
+    background: center no-repeat url(../../../assets/images/bakery.png);
+    background-position-y: center;
+    background-size: cover;
+}
+@media screen and (min-width: 768px) {
+   .img{
+       height: 19rem;
+}
+}
