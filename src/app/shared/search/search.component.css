@@ -1,0 +1,18 @@
+.input-section {
+  display: flex;
+  justify-content: center;
+  margin: 3px 0 0 60px;
+}
+#recipe-search {
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  box-shadow:  5px 5px 7px #d0d0d0,
+  -5px -5px 7px #f0f0f0;
+}
+
+@media screen and (min-width: 425px) {
+  .input-section{
+    margin: 0;
+  }
+}
