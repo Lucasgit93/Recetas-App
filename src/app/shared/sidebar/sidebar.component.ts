@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
+  historial: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {

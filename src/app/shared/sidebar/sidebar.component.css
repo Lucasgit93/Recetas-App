@@ -1,0 +1,12 @@
+.list{
+    width: 6rem;
+    height: auto;
+    background-color: white;
+}
+.title{
+    text-align: center;
+    padding-top: .5rem;
+}
+hr{
+    width: 5rem;
+}
