@@ -5,13 +5,15 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { PastryComponent } from './pastry/pastry.component';
 import { ChocolatierComponent } from './chocolatier/chocolatier.component';
 import { BakeryComponent } from './bakery/bakery.component';
+import { CardComponent } from './components/card/card.component';
 
 
 @NgModule({
   declarations: [
     PastryComponent,
     ChocolatierComponent,
-    BakeryComponent
+    BakeryComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,

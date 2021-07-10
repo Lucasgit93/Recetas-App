@@ -1,7 +1,7 @@
 .input-section {
   display: flex;
   justify-content: center;
-  margin: 3px 0 0 60px;
+  margin: 5px 0 0 60px;
 }
 #recipe-search {
   text-align: center;
