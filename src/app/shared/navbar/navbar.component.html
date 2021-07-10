@@ -1,0 +1,16 @@
+<header>
+  <div>
+    <nav>
+        <ul class="links">
+          <li
+            *ngFor="let route of routes"
+            routerLink="{{ route.route }}"
+            routerLinkActive="active"
+          >
+            {{ route.text }}
+          </li>
+        </ul>
+    </nav>
+</div>
+<hr />
+</header>
