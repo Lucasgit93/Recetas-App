@@ -1,15 +1,56 @@
 .img{
+    background: center no-repeat url(../../../assets/images/chocolatier.jpg);
+    background-position-y: center;
+    background-size: 25rem 20rem;
     height: 7rem;
     position: absolute;
     top: 0;
     width: 100vw;
     z-index: -99;
-    background: center no-repeat url(../../../assets/images/chocolatier.png);
-    background-position-y: -45rem;
-    background-size: cover;
 }
-@media screen and (min-width: 768px) {
-   .img{
-       height: 19rem;
-}
-}
+@media screen and (min-width: 375px) {
+    .img {
+      background-size: 30rem 15rem;
+    }
+  }
+  @media screen and (min-width: 425px) {
+    .img {
+        background-size: 45rem 20rem;
+        background-position-y: -7rem;
+    }
+  }
+  @media screen and (min-width: 576px) {
+      .img{
+         
+        background-size: 55rem 25rem;
+        background-position-y: -10rem;
+      }
+  }
+  @media screen and (min-width: 768px) {
+      .img{
+          height: 10rem;
+          background-size: 75rem 35rem;
+          background-position-y: -14rem;
+  }
+  }
+  @media screen and (min-width: 1024px) {
+      .img{
+          height:12rem;
+          background-size: 95rem 45rem;
+          background-position-y: -18.5rem;
+      }
+  }
+  @media screen and (min-width: 1440px) {
+      .img{
+          height:12rem;
+          background-size: 120rem 55rem;
+          background-position-y: -25rem;
+      }
+  }
+  @media screen and (min-width: 1660px) {
+      .img{
+          height:12rem;
+          background-size: 120rem 65rem;
+          background-position-y: -32rem;
+      }
+  }

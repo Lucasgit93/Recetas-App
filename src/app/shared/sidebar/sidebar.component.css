@@ -5,7 +5,10 @@
 }
 .list{
     height: auto;
-    background-color: red;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin-top: 2px;
+    margin-left: 2px;
 }
 .title{
     text-align: center;
@@ -17,6 +20,13 @@ hr{
 
 @media screen and (min-width: 768px) {
     .side-section{
-        top: 19rem;
+        top: 10rem;
+        width: 9rem;
+    }
+}
+@media screen and (min-width: 1024px){
+    .side-section{
+        top: 12rem;
+        width: 15rem;
     }
 }

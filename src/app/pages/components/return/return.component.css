@@ -1,0 +1,36 @@
+img{
+    width: 30px;
+
+}
+div{
+    border: 1px solid grey;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle , #870D01 50% , #000 );
+    position: fixed;
+
+    cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    div{
+        bottom: 20px;
+        left: 10px;
+    }
+}
+@media screen and (min-width: 768px) {
+    div{
+        right: 20px;
+        bottom: 20px;
+    }
+}
+@media screen and (min-width: 1440px) {
+    div{
+        bottom: 80px;
+        right: 120px;
+    }
+}

@@ -22,6 +22,14 @@
 
 @media screen and (min-width: 768px) {
   .input-section{
-    top: 10rem;
+    top: 1rem;
+  }
+}
+@media screen and (min-width: 1021px) {
+  .input-section{
+    top: 3rem;
+  }
+  #recipe-search{
+    width: 30rem;
   }
 }

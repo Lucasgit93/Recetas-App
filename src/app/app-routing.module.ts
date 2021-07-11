@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
   },
   {
+    path: 'new',
+    loadChildren: () => import('./protected/protected.module').then(m => m.ProtectedModule)
+  },
+  {
     path: '**',
     redirectTo: ''
   }

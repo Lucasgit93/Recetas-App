@@ -1,15 +1,55 @@
-.img{
-    height: 7rem;
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    z-index: -99;
-    background: center no-repeat url(../../../assets/images/bakery.png);
-    background-position-y: center;
-    background-size: cover;
+.img {
+  background: center no-repeat url(../../../assets/images/bakery.jpg);
+  background-position-y: center;
+  background-size: 25rem 20rem;
+  height: 7rem;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: -99;
+}
+@media screen and (min-width: 375px) {
+  .img {
+    background-size: 30rem 15rem;
+  }
+}
+@media screen and (min-width: 425px) {
+  .img {
+      background-position-y: -8rem;
+    background-size: 45rem 25rem;
+  }
+}
+@media screen and (min-width: 576px) {
+    .img{
+       
+      background-size: 55rem 25rem;
+    }
 }
 @media screen and (min-width: 768px) {
-   .img{
-       height: 19rem;
+    .img{
+        height: 10rem;
+        background-size: 75rem 40rem;
+        background-position-y: -12rem;
 }
+}
+@media screen and (min-width: 1024px) {
+    .img{
+        height:12rem;
+        background-size: 95rem 50rem;
+        background-position-y: -16rem;
+    }
+}
+@media screen and (min-width: 1440px) {
+    .img{
+        height:12rem;
+        background-size: 120rem 60rem;
+        background-position-y: -19rem;
+    }
+}
+@media screen and (min-width: 1660px) {
+    .img{
+        height:12rem;
+        background-size: 120rem 70rem;
+        background-position-y: -25rem;
+    }
 }

@@ -47,7 +47,7 @@
   }
   @media screen and (min-width: 768px){
     .card-section{
-      top: 19rem;
+      top: 9rem;
     }
       .card{
         width: 400px;
@@ -58,6 +58,11 @@
       .card-text{
         width: 260px;
       }
+  }
+  @media screen and (min-width: 1021px) {
+    .card-section{
+      top:12rem;
+    }
   }
   @media screen and (min-width: 1600px) {
     .card{
