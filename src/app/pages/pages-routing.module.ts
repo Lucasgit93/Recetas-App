@@ -6,12 +6,12 @@ import { BakeryComponent } from './bakery/bakery.component';
 
 const routes: Routes = [
   {
-    path: 'recipes',
+    path: '',
     children:[
       {path: 'bakery', component: BakeryComponent},
       {path: 'chocolatier', component: ChocolatierComponent},
       {path: 'pastry', component: PastryComponent},
-      {path: '**', redirectTo: 'recipes' },
+      {path: '**', redirectTo: 'pastry' },
     ]
       
     
