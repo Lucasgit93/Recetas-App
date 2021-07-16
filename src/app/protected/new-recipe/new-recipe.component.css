@@ -1,0 +1,137 @@
+.img {
+  background: center no-repeat url(../../../assets/images/login.jpg);
+  background-position-y: center;
+  background-size: 25rem 15rem;
+  height: 7rem;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: -99;
+}
+.form-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+}
+.background{
+  position: relative;
+  bottom: -65px;
+  height: 38rem;
+  width: 16.5rem;
+  background-color: #e5e5e5;
+  border-radius: 10px;
+}
+.container{
+  margin-top: 15px;
+}
+.bottom-input{
+  margin-right: 20px;
+}
+#file{
+  margin-top: 30px;
+}
+.container:nth-child(4){
+  margin-top: 25px;
+}
+.container:nth-child(5){
+  margin-top: 25px;
+}
+
+button{
+  background-color: #3333e0;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  color: #e5e5e5;
+  font-size: 1.1rem;
+  box-shadow: rgba(46, 46, 54, 0.25) 0px 2px 5px -1px, rgba(85, 82, 82, 0.3) 0px 1px 3px -1px;
+}
+
+
+/*--------------------------------*/
+@media screen and (min-width: 375px) {
+  .img {
+    background-size: 28rem 15rem;
+  }
+}
+@media screen and (min-width: 425px) {
+  .img {
+    background-position-y: -8rem;
+    background-size: 42rem 25rem;
+  }
+  .background{
+    font-size: 1.2rem;
+    bottom: -20px;
+    height: 40rem;
+  }
+}
+@media screen and (min-width: 576px) {
+  .img {
+    background-size: 47rem 24rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .img {
+    height: 10rem;
+    background-size: 64rem 30rem;
+    background-position-y: -8rem;
+  }
+  .background{
+    height: 25rem;
+    width: 40rem;
+    font-size: 1.2rem;
+  }
+  .container{
+    margin-top: 28px;
+  }
+  .container.text-area{
+    display: inline-block;
+
+  }
+  .bottom-input{
+    margin-right: 8px;
+  }
+  .text-area:nth-child(2){
+    margin-right: 20px;
+  }
+  .container:nth-child(4){
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  .container:nth-child(5){
+    margin-top: 30px;
+  }
+  #file{
+    margin-top: 0;
+  }
+
+}
+@media screen and (min-width: 1024px) {
+  .img {
+    height: 12rem;
+    background-size: 90rem 40rem;
+    background-position-y: -16rem;
+  }
+  #menu{
+    width: 8rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .img {
+    height: 12rem;
+    background-size: 120rem 60rem;
+    background-position-y: -19rem;
+  }
+}
+@media screen and (min-width: 1660px) {
+  .img {
+    height: 12rem;
+    background-size: 135rem 70rem;
+    background-position-y: -25rem;
+  }
+}

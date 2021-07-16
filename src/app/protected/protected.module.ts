@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ProtectedRoutingModule } from './protected-routing.module';
 import { NewRecipeComponent } from './new-recipe/new-recipe.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { NewRecipeComponent } from './new-recipe/new-recipe.component';
   ],
   imports: [
     CommonModule,
-    ProtectedRoutingModule
+    ProtectedRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class ProtectedModule { }

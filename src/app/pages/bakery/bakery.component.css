@@ -1,7 +1,7 @@
 .img {
   background: center no-repeat url(../../../assets/images/bakery.jpg);
   background-position-y: center;
-  background-size: 25rem 20rem;
+  background-size: 25rem 15rem;
   height: 7rem;
   position: absolute;
   top: 0;
@@ -10,26 +10,26 @@
 }
 @media screen and (min-width: 375px) {
   .img {
-    background-size: 30rem 15rem;
+    background-size: 28rem 15rem;
   }
 }
 @media screen and (min-width: 425px) {
   .img {
       background-position-y: -8rem;
-    background-size: 45rem 25rem;
+    background-size: 42rem 25rem;
   }
 }
 @media screen and (min-width: 576px) {
     .img{
        
-      background-size: 55rem 25rem;
+      background-size: 47rem 24rem;
     }
 }
 @media screen and (min-width: 768px) {
     .img{
         height: 10rem;
-        background-size: 75rem 40rem;
-        background-position-y: -12rem;
+        background-size: 64rem 30rem;
+        background-position-y: -8rem;
 }
 }
 @media screen and (min-width: 1024px) {
@@ -49,7 +49,7 @@
 @media screen and (min-width: 1660px) {
     .img{
         height:12rem;
-        background-size: 120rem 70rem;
+        background-size: 135rem 70rem;
         background-position-y: -25rem;
     }
 }

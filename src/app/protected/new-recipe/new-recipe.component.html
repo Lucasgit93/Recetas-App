@@ -1,1 +1,52 @@
-<p>new-recipe works!</p>
+<section class="img">
+  <form class="form-container" [formGroup]="myForm" (ngSubmit)="submit()">
+    <div class="background">
+      <div class="container">
+        <label for="">Titulo</label>
+        <div>
+          <input type="text" formControlName="title" />
+        </div>
+      </div>
+      <div class="container text-area">
+        <label for="">Ingredientes</label>
+        <div>
+          <textarea
+            name="ingredients"
+            id=""
+            cols="30"
+            rows="10"
+            formControlName="ingredients"
+          ></textarea>
+        </div>
+      </div>
+      <div class="container text-area">
+        <label for="desc">Preparacion</label>
+        <div>
+          <textarea
+            name="preparation"
+            id="desc"
+            cols="30"
+            rows="10"
+            formControlName="preparation"
+          ></textarea>
+        </div>
+      </div>
+      <div class="container">
+        <div>
+          <label for="menu" class="bottom-input">Especialidad</label>
+          <select name="menu" id="menu" formControlName="menu">
+            <option value="Pasteleria">Pasteleria</option>
+            <option value="Panaderia">Panaderia</option>
+            <option value="Chocolateria">Chocolateria</option>
+          </select>
+        </div>
+        <div>
+          <input type="file" name="file" id="file" formControlName="file"/>
+        </div>
+      </div>
+      <div class="container">
+        <button type="submit">Agregar</button>
+      </div>
+    </div>
+  </form>
+</section>
