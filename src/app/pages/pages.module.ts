@@ -9,6 +9,7 @@ import { CardComponent } from './components/card/card.component';
 import { SearchComponent } from '../shared/search/search.component';
 import { SidebarComponent } from '../shared/sidebar/sidebar.component';
 import { ReturnComponent } from './components/return/return.component';
+import { RecipeComponent } from './recipe/recipe.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { ReturnComponent } from './components/return/return.component';
     SearchComponent,
     SidebarComponent,
     ReturnComponent,
+    RecipeComponent,
   ],
   imports: [
     CommonModule,

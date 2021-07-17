@@ -1,0 +1,116 @@
+.img {
+    background: center no-repeat url(../../../assets/images/viewRecipe.jpg);
+    background-position-y: center;
+    background-size: 25rem 15rem;
+    height: 7rem;
+    position: relative;
+    top: -80px;
+    width: 100vw;
+    z-index: -99;
+  }
+.container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-container{
+    display: inherit;
+    width: 18.5rem;
+    align-items: center;
+    flex-direction: column;
+    height: fit-content;
+    background-color: wheat;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.img-container{
+    width: 100%;
+    height: 100px;
+}
+img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+.title-container{
+    font-size: 2rem;
+    margin: 10px 0;
+}
+.ingredients-container, .desc-container{
+    font-size: 1.25rem;
+    margin-top: 10px;
+    padding: 2px 5px;
+    
+}
+.ingredients, .desc {
+    word-wrap: break-word;
+}
+
+
+  @media screen and (min-width: 375px) {
+    .img {
+      background-size: 28rem 15rem;
+    }
+    .main-container{
+        width: 22rem;
+    }
+
+  }
+  @media screen and (min-width: 425px) {
+    .img {
+        background-position-y: -8rem;
+      background-size: 42rem 25rem;
+    }
+    .main-container{
+        width: 25rem;
+    }
+  }
+  @media screen and (min-width: 576px) {
+      .img{
+         
+        background-size: 47rem 24rem;
+      }
+  }
+  @media screen and (min-width: 768px) {
+      .img{
+          height: 10rem;
+          background-size: 64rem 30rem;
+          background-position-y: -8rem;
+  }
+  .img-container{
+      height: 200px;
+  }
+  .main-container{
+      width: 45rem;
+  }
+  .title-container{
+      font-size: 2.5rem;
+  }
+  .ingredients-container, .desc-container{
+      font-size: 1.3rem;
+  }
+  }
+  @media screen and (min-width: 1024px) {
+      .img{
+          height:12rem;
+          background-size: 95rem 50rem;
+          background-position-y: -16rem;
+      }
+
+  }
+  @media screen and (min-width: 1440px) {
+      .img{
+          height:12rem;
+          background-size: 120rem 60rem;
+          background-position-y: -19rem;
+      }
+  }
+  @media screen and (min-width: 1660px) {
+      .img{
+          height:12rem;
+          background-size: 135rem 70rem;
+          background-position-y: -25rem;
+      }
+  }
