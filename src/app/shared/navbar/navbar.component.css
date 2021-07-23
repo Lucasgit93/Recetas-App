@@ -14,6 +14,10 @@ li{
 
 hr{
     width: 15rem;
+    height: 1.5px;
+    border-radius: 2px;
+    background-color: #fff;
+    border: #000;
     margin-top: 1rem;
 }
 .active, li:hover{

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { JwtValidationGuard } from './protected/guards/jwt-validation.guard';
 
 const routes: Routes = [
   {
@@ -8,7 +9,9 @@ const routes: Routes = [
   },
   {
     path: 'new',
-    loadChildren: () => import('./protected/protected.module').then(m => m.ProtectedModule)
+    loadChildren: () => import('./protected/protected.module').then(m => m.ProtectedModule),
+    canActivate: [JwtValidationGuard],
+    canLoad: [JwtValidationGuard]
   },
   {
     path: 'auth',

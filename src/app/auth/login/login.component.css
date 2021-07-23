@@ -45,7 +45,10 @@
     justify-content: center;
 }
 .link-span{
+    background-color: rgb(92, 92, 218);
     cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 20px;
 }
 input{
     margin-top: 5px;

@@ -1,18 +1,18 @@
 <section class="img">
-  <form>
+  <form autocomplete="off" [formGroup]="myForm" (ngSubmit)="login()">
     <div class="form-display">
       <div class="form form-user">
         <label for="usuario">Usuario</label>
-        <input type="text" id="usuario" />
+        <input type="text" id="usuario" formControlName="username"/>
       </div>
       <div class="form form-pass">
         <label for="pass">Contraseña</label>
-        <input type="password" id="pass" />
+        <input type="password" id="pass" formControlName="password"/>
     </div>
     <button type="submit">Ingresar</button>
     </div>
   </form>
-  <div class="link-div">
+  <div class="link-div animate__animated animate__fadeIn" *ngIf="isLoggedIn">
     <span class="link-span" routerLink="/new/recipe">Añadir receta nueva</span>
   </div>
 </section>
