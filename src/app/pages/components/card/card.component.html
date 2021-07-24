@@ -1,5 +1,5 @@
 <section class="card-section">
-      <div class="card" *ngFor="let recipe of recipes">
+      <div class="card" *ngFor="let recipe of recipes" [routerLink]="['../view', recipe._id]">
         <div class="card-img">
           <img src="../../../../assets/images/chipa.jpg" alt="" class="recipe-img">
         </div>
