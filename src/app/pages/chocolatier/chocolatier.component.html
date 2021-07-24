@@ -4,8 +4,13 @@
     <div class="img animate__animated animate__fadeIn">
     </div>
 </section>
-<app-card></app-card>
-<app-search></app-search>
-<app-sidebar></app-sidebar>
+<div class="search-container">
+    <app-search (onRecipeSearch)="searchOnDB( $event )"></app-search>
+</div>
+<div class="spacer"></div>
+<div class="card-container">
+    <app-card [recipes]="recipe"></app-card>
+</div>
+<app-sidebar [history]="history"></app-sidebar>
 <app-return></app-return>
 </main>

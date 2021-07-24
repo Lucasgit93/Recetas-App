@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipeService } from '../../shared/services/recipe-service.service';
+import { Recipe } from '../interface/recipe.interface';
 
 @Component({
   selector: 'app-pastry',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PastryComponent implements OnInit {
 
-  constructor() { }
+
+  
+  recipe: Recipe[] = []
+
+  history: string[] = [];
+
+  constructor( private recipeService: RecipeService) { }
 
   ngOnInit(): void {
+    this.getRecipes();
   }
 
+
+  getRecipes(){
+    this.recipeService.getRecipes()
+    .subscribe( ({ pastry }) => {
+      this.recipe = pastry
+    } )
+  }
+
+  searchOnDB(input: string){}
+  
 }

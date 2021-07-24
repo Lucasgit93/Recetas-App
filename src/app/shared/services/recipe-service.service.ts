@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { of } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { of, Observable } from 'rxjs';
 
 import { tap, map, catchError } from 'rxjs/operators';
 
@@ -30,7 +30,7 @@ export class RecipeService {
 
 
 
-  constructor( private http: HttpClient) { }
+  constructor( private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
 
 
   userLogin( username: string, password: string){
@@ -56,23 +56,17 @@ export class RecipeService {
   }
 
 
-  getRecipes( recipe: string ){
-    const bakery = `${this.baseUrl}/recipe/bakery`;
+  getRecipes():Observable<any>{
+    const urlParam = this.router.url.split('/')[2];
 
-    const pastry = `${this.baseUrl}/recipe/pastry`;
+    const url = `${this.baseUrl}/recipe/${urlParam}`;
 
-    const chocolatier = `${this.baseUrl}/recipe/chocolatier`;
-
-    const body = { recipe };
+    return this.http.get<any>( url )
+            .pipe(
+             tap( ({recipe}) => recipe ),
+              catchError( err => of( err.error.msg ))
+            );
     
-    if(bakery){
-      return this.http.get<Recipe>(bakery, )
-
-    } else if(pastry){
-      return this.http.get<Recipe>(pastry,)
-    } else{
-      return this.http.get<Recipe>(chocolatier, )
-    }
   }
 
 

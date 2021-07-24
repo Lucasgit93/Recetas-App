@@ -1,6 +1,6 @@
 <section class="input-section">
-    <form [formGroup]="myForm" (ngSubmit)="searchOnDB()">
+    <form (ngSubmit)="searchOnDB()" [formGroup]="myForm">
         <label for="recipe-search"></label>
-        <input type="text" id="recipe-search" autocomplete="off" placeholder="Buscar receta..." formGroupName="recipe" >
+        <input type="text" id="recipe-search" autocomplete="off" placeholder="Buscar receta..." formControlName="recipe">
     </form>
 </section>

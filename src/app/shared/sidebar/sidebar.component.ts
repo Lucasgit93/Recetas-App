@@ -12,7 +12,7 @@ export class SidebarComponent implements OnInit {
 
 
 
-  historial: boolean = false;
+  historial: boolean = true;
 
   constructor() { }
 

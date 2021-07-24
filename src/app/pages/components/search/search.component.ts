@@ -16,22 +16,16 @@ export class SearchComponent{
     recipe: ['']
   })
 
-
-  recipe: string = '';
-
   @Output() onRecipeSearch: EventEmitter<string> = new EventEmitter();
 
   constructor(
     private recipeService: RecipeService,
-    private route: ActivatedRoute,
     private fb: FormBuilder
   ) {}
 
   searchOnDB() {
-    const { recipe } = this.myForm.value;
-    // this.recipeService.getRecipes();
-    // this.onRecipeSearch.emit(recipe);
-    console.log(recipe)
+    console.log()
+    this.onRecipeSearch.emit( this.myForm.value );
   }
 }
 

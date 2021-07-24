@@ -1,9 +1,7 @@
 .input-section {
   display: flex;
-  position: relative;
-  top: -2.2rem;
   justify-content: center;
-  margin: 5px 0 0 60px;
+  margin: 5px 0 0 65px;
 }
 #recipe-search {
   text-align: center;
@@ -16,18 +14,18 @@
 @media screen and (min-width: 425px) {
   .input-section{
     margin: 0;
-    top: -2.5rem;
+    top: -16.5rem;
   }
 }
 
 @media screen and (min-width: 768px) {
   .input-section{
-    top: 1rem;
+    top: -13.5rem;
   }
 }
 @media screen and (min-width: 1021px) {
   .input-section{
-    top: 3rem;
+    top: -11.5rem;
   }
   #recipe-search{
     width: 30rem;
