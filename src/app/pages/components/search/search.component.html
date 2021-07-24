@@ -1,0 +1,6 @@
+<section class="input-section">
+    <form [formGroup]="myForm" (ngSubmit)="searchOnDB()">
+        <label for="recipe-search"></label>
+        <input type="text" id="recipe-search" autocomplete="off" placeholder="Buscar receta..." formGroupName="recipe" >
+    </form>
+</section>

@@ -31,6 +31,7 @@ login(){
       this.isLoggedIn = true;
 
     } else {
+      this.isLoggedIn = false;
       console.log(resp)
     }
   })

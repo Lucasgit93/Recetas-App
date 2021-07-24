@@ -3,8 +3,11 @@
     <div class="img">
     </div>
 </section>
-<app-card></app-card>
-<app-search></app-search>
-<app-sidebar></app-sidebar>
+<app-card [recipe]="recipe"></app-card>
+
+<app-search (onRecipeSearch)="recipeSearch( $event )"></app-search>
+
+<app-sidebar [history]="history"></app-sidebar>
+
 <app-return></app-return>
 </main>

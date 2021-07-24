@@ -6,10 +6,11 @@ import { PastryComponent } from './pastry/pastry.component';
 import { ChocolatierComponent } from './chocolatier/chocolatier.component';
 import { BakeryComponent } from './bakery/bakery.component';
 import { CardComponent } from './components/card/card.component';
-import { SearchComponent } from '../shared/search/search.component';
+import { SearchComponent } from './components/search/search.component';
 import { SidebarComponent } from '../shared/sidebar/sidebar.component';
 import { ReturnComponent } from './components/return/return.component';
 import { RecipeComponent } from './recipe/recipe.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { RecipeComponent } from './recipe/recipe.component';
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class PagesModule { }
