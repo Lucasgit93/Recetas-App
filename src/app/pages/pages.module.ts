@@ -11,6 +11,7 @@ import { SidebarComponent } from '../shared/sidebar/sidebar.component';
 import { ReturnComponent } from './components/return/return.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoadingComponent } from './components/loading/loading.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SidebarComponent,
     ReturnComponent,
     RecipeComponent,
+    LoadingComponent,
   ],
   imports: [
     CommonModule,

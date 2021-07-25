@@ -8,6 +8,7 @@ import { RecipeService } from '../../shared/services/recipe-service.service';
   styleUrls: ['./bakery.component.css'],
 })
 export class BakeryComponent implements AfterViewInit {
+
   recipe: Recipe[] = [];
 
   history: string[] = [];

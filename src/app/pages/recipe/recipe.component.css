@@ -49,6 +49,8 @@ img{
 }
 
 
+/*------------MEDIA---------------------*/
+
   @media screen and (min-width: 375px) {
     .img {
       background-size: 28rem 15rem;
