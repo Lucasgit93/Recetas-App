@@ -20,16 +20,19 @@ interface User {
 export class RecipeService {
   private baseUrl: string = environment.baseUrl;
   private _user!: User;
+  private _history: string[] = [];
 
   get user() {
     return { ...this._user };
   }
 
+
+
   constructor(
     private http: HttpClient,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) {  }
 
   userLogin(username: string, password: string) {
     const url = `${this.baseUrl}/login`;
@@ -62,12 +65,28 @@ export class RecipeService {
   }
 
   getRecipe(id: string): Observable<any> {
-     const url = `${this.baseUrl}/recipe/${ id }`
-     
+    const url = `${this.baseUrl}/recipe/${id}`;
 
     return this.http.get(url);
-    
   }
+
+  getRecipeBySearch(input: string): Observable<any>{
+      
+    const url = `${this.baseUrl}/search?title=${input}`;
+
+  
+    return this.http.get<any>(url)
+    .pipe(
+      tap( ({ recipe }) => recipe))
+
+
+
+  }
+
+
+
+
+
 
   createRecipe(
     title: string,
@@ -92,4 +111,15 @@ export class RecipeService {
   editRecipe() {}
 
   deleteRecipe() {}
+
+
+
+
+
+
+
+
+
+
+ 
 }

@@ -1,16 +1,24 @@
 <main>
-<section>
-    <div class="img animate__animated animate__fadeIn">
-    </div>
-</section>
-<div class="search-container">
-    <app-search (onRecipeSearch)="searchOnDB( $event )"></app-search>
-</div>
-<div class="spacer"></div>
-<div class="card-container" >
-    <app-card [recipes]="recipe"></app-card>
-</div>
-<app-sidebar [history]="history"></app-sidebar>
+  <section>
+    <div class="img"></div>
+  </section>
+  <div class="search-container">
+    <app-search (onRecipeSearch)="searchOnDB($event)"></app-search>
+  </div>
+  <div class="spacer"></div>
+  <div class="card-container">
+    <app-card [recipes]="recipe" *ngIf="recipe.length >= 1; else noResults " ></app-card>
+    <ng-template #noResults>
+     <app-error-msg></app-error-msg>
+    </ng-template>
+    
+  </div>
+  <app-sidebar
+    [history]="history"
+    [recipes]="recipe"
+    *ngIf="recipeSearch"
+    (onListSearch)="listSearch( $event )"
+    ></app-sidebar>
 
-<app-return></app-return>
+  <app-return></app-return>
 </main>

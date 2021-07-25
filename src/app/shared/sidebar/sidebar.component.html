@@ -1,11 +1,11 @@
 <section class="side-section">
-    <div class="list" *ngIf="historial">
+    <div class="list animate__animated animate__fadeIn animate_delay-4s">
       <div class="title" >
         <span>Historial</span>
         <hr>
       </div>
       <ul>
-        <li></li>
+        <li *ngFor="let search of history; let i = index" (click)="ListSearch(i)">{{search}} <hr class="li-division"></li>
       </ul>
     </div>
 </section>

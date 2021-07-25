@@ -11,10 +11,14 @@ import { RecipeService } from '../../../shared/services/recipe-service.service';
 })
 export class SearchComponent{
 
-
+  
   myForm: FormGroup = this.fb.group({
     recipe: ['']
   })
+
+
+
+  input: string = this.myForm.value.recipe;
 
   @Output() onRecipeSearch: EventEmitter<string> = new EventEmitter();
 
@@ -24,9 +28,11 @@ export class SearchComponent{
   ) {}
 
   searchOnDB() {
-    console.log()
-    this.onRecipeSearch.emit( this.myForm.value );
-  }
-}
 
-//TODO: CAPTURAR EL VALOR DEL INPUT Y PASARLO AL COMPONENTE PADRE
+  
+
+    this.onRecipeSearch.emit( this.myForm.value.recipe.toLowerCase());
+  }
+
+
+}

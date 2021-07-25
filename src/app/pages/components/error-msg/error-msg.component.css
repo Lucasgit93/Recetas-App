@@ -1,0 +1,44 @@
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.red {
+  background-color: rgb(197, 197, 197);
+  border: 1px solid rgb(190, 186, 186);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 100px;
+  margin-left: 95px;
+  border-radius: 10px;
+}
+h1 {
+  color: rgb(104, 102, 102);
+}
+
+@media screen and (min-width: 425px) {
+  .red {
+    margin-left: 10px;
+  }
+}
+@media screen and (min-width: 576px) {
+}
+@media screen and (min-width: 768px) {
+  .red {
+    margin-left: 0;
+    font-size: 1.1rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .red {
+    width: 500px;
+    font-size: 1.3rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}

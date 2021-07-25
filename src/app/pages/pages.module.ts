@@ -12,6 +12,7 @@ import { ReturnComponent } from './components/return/return.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoadingComponent } from './components/loading/loading.component';
+import { ErrorMsgComponent } from './components/error-msg/error-msg.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { LoadingComponent } from './components/loading/loading.component';
     ReturnComponent,
     RecipeComponent,
     LoadingComponent,
+    ErrorMsgComponent,
   ],
   imports: [
     CommonModule,

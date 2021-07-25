@@ -10,8 +10,6 @@ export class CardComponent implements AfterViewInit  {
 
   @Input() recipes: Recipe[] = [];
 
-  
-  titulo: string = "Chipa"
 
   constructor() { }
 

@@ -22,6 +22,7 @@
   height: 10px;
 }
 
+
 @media screen and (min-width: 375px) {
   .img {
     background-size: 30rem 15rem;
@@ -31,6 +32,9 @@
   .img {
     background-position-y: -7rem;
     background-size: 45rem 25rem;
+  }
+  .red{
+    margin-left: 10px;
   }
 }
 @media screen and (min-width: 576px) {
@@ -49,6 +53,9 @@
   }
   .search-container {
     margin-top: 8rem;
+  }
+  .red{
+    margin-left: 0;
   }
 }
 @media screen and (min-width: 1024px) {
