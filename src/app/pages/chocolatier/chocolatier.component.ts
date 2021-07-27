@@ -29,6 +29,7 @@ export class ChocolatierComponent implements OnInit {
 
   searchOnDB(input: string) {
     this.recipeSearch = true;
+    input = input.toLowerCase();
     if (!this.history.includes(input)) {
       this.history.push(input);
       localStorage.setItem('chocolatier', JSON.stringify(this.history));

@@ -6,7 +6,7 @@
         <img src="../../../assets/images/chipa.jpg" alt="30" />
       </div>
       <div class="title-container">
-        <h1>{{recipe.title}}</h1>
+        <h1>{{recipe.title | titlecase}}</h1>
       </div>
       <div class="ingredients-container">
         <p class="ingredients">
@@ -18,6 +18,14 @@
         <p class="desc">
           {{recipe.preparation}}
         </p>
+      </div>
+      <div class="btn-container">
+        <div class="btn-del-container">
+          <button class="btn-del">Borrar</button>
+        </div>
+        <div class="btn-edit-container">
+          <button class="btn-edit">Editar</button>
+        </div>
       </div>
     </div>
   </div>

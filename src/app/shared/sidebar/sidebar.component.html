@@ -5,7 +5,7 @@
         <hr>
       </div>
       <ul>
-        <li *ngFor="let search of history; let i = index" (click)="ListSearch(i)">{{search}} <hr class="li-division"></li>
+        <li *ngFor="let search of history; let i = index" (click)="ListSearch(i)">{{search | titlecase}} <hr class="li-division"></li>
       </ul>
     </div>
 </section>

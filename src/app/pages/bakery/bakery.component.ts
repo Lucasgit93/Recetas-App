@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../interface/recipe.interface';
 import { RecipeService } from '../../shared/services/recipe-service.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-bakery',
@@ -17,7 +16,6 @@ export class BakeryComponent implements OnInit {
 
   constructor(
     private recipeService: RecipeService,
-    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -33,6 +31,7 @@ export class BakeryComponent implements OnInit {
 
   searchOnDB(input: string) {
     this.recipeSearch = true;
+    input = input.toLowerCase();
     if (!this.history.includes(input)) {
       this.history.unshift(input);
       this.history = this.history.splice(0, 7);
