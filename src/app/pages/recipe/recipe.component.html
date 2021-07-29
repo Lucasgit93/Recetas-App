@@ -6,28 +6,31 @@
         <img src="../../../assets/images/chipa.jpg" alt="30" />
       </div>
       <div class="title-container">
-        <h1>{{recipe.title | titlecase}}</h1>
+        <h1>{{ recipe.title | titlecase }}</h1>
       </div>
       <div class="ingredients-container">
         <p class="ingredients">
-         {{recipe.ingredients}}
+          {{ recipe.ingredients }}
         </p>
         <hr />
       </div>
       <div class="desc-container">
         <p class="desc">
-          {{recipe.preparation}}
+          {{ recipe.preparation }}
         </p>
       </div>
       <div class="btn-container">
         <div class="btn-del-container">
-          <button class="btn-del">Borrar</button>
+          <button class="btn-del" (click)="recipeDelete(recipe._id)">
+            Borrar
+          </button>
         </div>
         <div class="btn-edit-container">
-          <button class="btn-edit">Editar</button>
+          <button class="btn-edit" [routerLink]="['../../edit', routeId]">Editar</button>
         </div>
       </div>
     </div>
   </div>
-<app-loading *ngIf="isLoading"></app-loading>
+  <app-modal (onCancel)="cancel( $event )" (onDelete)="delete( $event )" *ngIf="isModal"></app-modal>
+  <app-loading *ngIf="isLoading"></app-loading>
 </section>

@@ -1,0 +1,64 @@
+<section>
+  <div class="img"></div>
+  
+  <div class="loading-container" *ngIf="isLoading; else isNotLoading">
+    <app-loading></app-loading>
+  </div>
+  <ng-template #isNotLoading>
+    <div class="form-container">
+      <form *ngIf="!isLoading" [formGroup]="myForm" (ngSubmit)="editRecipe()">
+        <div class="background">
+          <div class="container">
+            <label for="">Titulo</label>
+            <div>
+              <input class="recipe-title" type="text" formControlName="title" />
+            </div>
+          </div>
+          <div class="container text-area">
+            <label for="">Ingredientes</label>
+            <div>
+              <textarea
+                name="ingredients"
+                id=""
+                cols="30"
+                rows="10"
+                formControlName="ingredients"
+                value="recipe.ingredients"
+              ></textarea>
+            </div>
+          </div>
+          <div class="container text-area">
+            <label for="desc">Preparacion</label>
+            <div>
+              <textarea
+                name="preparation"
+                id="desc"
+                cols="30"
+                rows="10"
+                formControlName="preparation"
+              ></textarea>
+            </div>
+          </div>
+          <div class="container">
+            <div>
+              <label for="menu" class="bottom-input">Especialidad</label>
+              <select name="menu" id="menu" formControlName="menu">
+                <option value="Pasteleria">Pasteleria</option>
+                <option value="Panaderia">Panaderia</option>
+                <option value="Chocolateria">Chocolateria</option>
+              </select>
+            </div>
+            <div>
+              <input type="file" name="file" id="file" formControlName="file" />
+            </div>
+          </div>
+          <div class="container">
+            <button type="submit" [ngClass]="{ disabled: myForm.invalid }">
+              Agregar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </ng-template>
+</section>

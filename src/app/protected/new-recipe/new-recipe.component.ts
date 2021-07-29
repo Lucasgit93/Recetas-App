@@ -36,6 +36,8 @@ submit(){
 
   this.recipeService.createRecipe( title, ingredients, preparation, menu, file )
   .subscribe();
+
+  this.myForm.reset();
 }
 
 

@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { of, Observable } from 'rxjs';
 
 import { tap, map, catchError } from 'rxjs/operators';
@@ -8,7 +8,6 @@ import { tap, map, catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 import { RecipeResponse } from './interface';
-import { Recipe } from '../../pages/interface/recipe.interface';
 
 interface User {
   token: string;
@@ -26,13 +25,7 @@ export class RecipeService {
     return { ...this._user };
   }
 
-
-
-  constructor(
-    private http: HttpClient,
-    private route: ActivatedRoute,
-    private router: Router
-  ) {  }
+  constructor(private http: HttpClient, private router: Router) {}
 
   userLogin(username: string, password: string) {
     const url = `${this.baseUrl}/login`;
@@ -70,23 +63,11 @@ export class RecipeService {
     return this.http.get(url);
   }
 
-  getRecipeBySearch(input: string): Observable<any>{
-      
+  getRecipeBySearch(input: string): Observable<any> {
     const url = `${this.baseUrl}/search?title=${input}`;
 
-  
-    return this.http.get<any>(url)
-    .pipe(
-      tap( ({ recipe }) => recipe))
-
-
-
+    return this.http.get<any>(url).pipe(tap(({ recipe }) => recipe));
   }
-
-
-
-
-
 
   createRecipe(
     title: string,
@@ -108,18 +89,54 @@ export class RecipeService {
     );
   }
 
-  editRecipe() {}
+  editRecipe(
+    title: string,
+    ingredients: string,
+    preparation: string,
+    menu: string,
+    file: string,
+    id: string
+  ) {
+    const url = `${this.baseUrl}/recipe/${id}`;
+    const body = { title, ingredients, preparation, menu, file };
 
-  deleteRecipe() {}
+    const headers = new HttpHeaders().set(
+      'token',
+      localStorage.getItem('token') || ''
+    );
+
+    this.http.put<RecipeResponse>(url, body, { headers }).subscribe();
+  }
+
+  deleteRecipe(id: string) {
+    const url = `${this.baseUrl}/recipe/${id}`;
+    const headers = new HttpHeaders().set(
+      'token',
+      localStorage.getItem('token') || ''
+    );
+
+    return this.http.delete<RecipeResponse>(url, { headers });
+  }
 
 
 
 
 
+  routeNavigation(recipeMenu: string){
+    switch (recipeMenu) {
+      case "Panaderia":
+        this.router.navigateByUrl('recipes/bakery');
+        break;
+      case "Pasteleria":
+        this.router.navigateByUrl('recipes/pastry');
+        break;
+    
+      default:
+        this.router.navigateByUrl('recipes/chocolatier');
+        break;
+    }
+  }
 
 
 
-
-
- 
 }

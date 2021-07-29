@@ -41,6 +41,7 @@ export class PastryComponent implements OnInit {
   }
 
   listSearch(search: string) {
+    search = search.toLowerCase();
     this.recipeService.getRecipeBySearch(search).subscribe(({ pastry }) => {
       this.recipe = [];
       this.recipe.push(...pastry);

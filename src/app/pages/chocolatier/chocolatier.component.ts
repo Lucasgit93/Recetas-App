@@ -42,6 +42,9 @@ export class ChocolatierComponent implements OnInit {
   }
 
   listSearch(search: string) {
+  console.log(search)
+
+    search = search.toLowerCase();
     this.recipeService.getRecipeBySearch(search).subscribe(({ chocolatier }) => {
       this.recipe = [];
       this.recipe.push(...chocolatier);

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RecipeService } from '../../shared/services/recipe-service.service';
 
@@ -7,7 +7,7 @@ import { RecipeService } from '../../shared/services/recipe-service.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   myForm: FormGroup = this.formBuilder.group({
     username: ['admin', [Validators.required]],
@@ -18,6 +18,16 @@ export class LoginComponent {
 
   constructor( private recipeService: RecipeService,
                private formBuilder : FormBuilder) { }
+
+
+
+
+ngOnInit(): void {
+  if(localStorage.getItem('token')){
+    this.isLoggedIn = true;
+  }
+  
+}
 
 
 login(){
@@ -32,7 +42,6 @@ login(){
 
     } else {
       this.isLoggedIn = false;
-      console.log(resp)
     }
   })
 }

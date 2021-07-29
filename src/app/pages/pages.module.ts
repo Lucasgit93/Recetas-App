@@ -13,20 +13,24 @@ import { RecipeComponent } from './recipe/recipe.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoadingComponent } from './components/loading/loading.component';
 import { ErrorMsgComponent } from './components/error-msg/error-msg.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { EditComponent } from './edit/edit.component';
 
 
 @NgModule({
   declarations: [
-    PastryComponent,
-    ChocolatierComponent,
     BakeryComponent,
     CardComponent,
+    ChocolatierComponent,
+    ErrorMsgComponent,
+    LoadingComponent,
+    ModalComponent,
+    PastryComponent,
+    RecipeComponent,
+    ReturnComponent,
     SearchComponent,
     SidebarComponent,
-    ReturnComponent,
-    RecipeComponent,
-    LoadingComponent,
-    ErrorMsgComponent,
+    EditComponent,
   ],
   imports: [
     CommonModule,

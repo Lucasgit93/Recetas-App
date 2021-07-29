@@ -14,9 +14,7 @@ export class BakeryComponent implements OnInit {
 
   recipeSearch: boolean = false;
 
-  constructor(
-    private recipeService: RecipeService,
-  ) {}
+  constructor(private recipeService: RecipeService) {}
 
   ngOnInit(): void {
     this.localHistory();
@@ -43,8 +41,9 @@ export class BakeryComponent implements OnInit {
       this.recipe.push(...bakery);
     });
   }
-  
+
   listSearch(search: string) {
+    search = search.toLowerCase();
     this.recipeService.getRecipeBySearch(search).subscribe(({ bakery }) => {
       this.recipe = [];
       this.recipe.push(...bakery);
@@ -63,5 +62,4 @@ export class BakeryComponent implements OnInit {
       }
     }
   }
-
 }
