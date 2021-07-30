@@ -21,5 +21,11 @@ time, mark, audio, video {
 }
 
 body{
-	background: radial-gradient(circle, rgb(163, 28, 15) 14%, rgb(39, 35, 35) 92%);
+	background: #a89696;
 }
+/* 7c7c 
+
+
+fondo de la pag f8f9fa  , los "articulos" fondo blanco sin borde
+la sombra 0 2px 5px rgb (0,0,0 / 14%) proba algo asi a ver q tal queda
+le podes poner un border radius de 6 al articulo*/
