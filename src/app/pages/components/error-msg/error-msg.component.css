@@ -1,9 +1,9 @@
-.error-container {
+.error-main-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.red {
+.error-msg-container {
   background-color: rgb(197, 197, 197);
   border: 1px solid rgb(190, 186, 186);
   display: flex;
@@ -12,6 +12,7 @@
   width: 220px;
   height: 100px;
   margin-left: 95px;
+  margin-top: 20px;
   border-radius: 10px;
 }
 h1 {
@@ -19,25 +20,28 @@ h1 {
 }
 
 @media screen and (min-width: 425px) {
-  .red {
+  .error-msg-container {
     margin-left: 10px;
   }
 }
 @media screen and (min-width: 576px) {
 }
 @media screen and (min-width: 768px) {
-  .red {
+  .error-msg-container {
     margin-left: 0;
     font-size: 1.1rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  .red {
+  .error-msg-container {
     width: 500px;
     font-size: 1.3rem;
   }
 }
 @media screen and (min-width: 1440px) {
+  .error-msg-container{
+    width: 30rem;
+  }
   h1 {
     font-size: 1.5rem;
   }

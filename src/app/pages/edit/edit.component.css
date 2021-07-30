@@ -1,11 +1,12 @@
 .img {
-  background: center no-repeat url(../../../assets/images/login.jpg);
-  background-position-y: center;
-  background-size: 25rem 15rem;
-  height: 7rem;
+  background-image: url(../../../assets/images/login.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  height: 100%;
   position: absolute;
   top: 0;
-  width: 100vw;
+  width: 100%;
   z-index: -99;
 }
 .form-container {
@@ -17,11 +18,13 @@
   height: 100%;
 }
 .background {
+  color: #dbdbdb;
   position: relative;
   bottom: -65px;
   height: 38rem;
   width: 16.5rem;
-  background-color: #e5e5e5;
+  background-color: #9c9c9c88;
+  backdrop-filter: blur(8px);
   border-radius: 10px;
 }
 .container {
@@ -52,8 +55,8 @@
   justify-content: center;
 }
 
-img{
-  animation: rotate .8s ease-in-out;
+img {
+  animation: rotate 0.8s ease-in-out;
 }
 
 button {
@@ -77,16 +80,8 @@ select {
 }
 
 /*--------------------------------*/
-@media screen and (min-width: 375px) {
-  .img {
-    background-size: 28rem 15rem;
-  }
-}
+
 @media screen and (min-width: 425px) {
-  .img {
-    background-position-y: -8rem;
-    background-size: 42rem 25rem;
-  }
   .background {
     font-size: 1.2rem;
     bottom: -20px;
@@ -97,17 +92,8 @@ select {
     top: 40px;
   }
 }
-@media screen and (min-width: 576px) {
-  .img {
-    background-size: 47rem 24rem;
-  }
-}
+
 @media screen and (min-width: 768px) {
-  .img {
-    height: 10rem;
-    background-size: 64rem 30rem;
-    background-position-y: -8rem;
-  }
   .form-container {
     top: 70px;
   }
@@ -142,43 +128,22 @@ select {
   }
 }
 @media screen and (min-width: 1024px) {
-  .img {
-    height: 12rem;
-    background-size: 90rem 40rem;
-    background-position-y: -16rem;
-  }
-  .form-container{
+  .form-container {
     top: 120px;
   }
-  .loading-container{
+  .loading-container {
     height: 50rem;
   }
   #menu {
     width: 8rem;
   }
 }
-@media screen and (min-width: 1440px) {
-  .img {
-    height: 12rem;
-    background-size: 120rem 60rem;
-    background-position-y: -19rem;
-  }
-}
-@media screen and (min-width: 1660px) {
-  .img {
-    height: 12rem;
-    background-size: 135rem 70rem;
-    background-position-y: -25rem;
-  }
-}
-
 
 @keyframes rotate {
-  0%{
+  0% {
     transform: rotateZ(0);
   }
-  100%{
+  100% {
     transform: rotateZ(360deg);
   }
-
 }

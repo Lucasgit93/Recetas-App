@@ -1,9 +1,9 @@
-
 .img {
-  background: center no-repeat url(../../../assets/images/bakery.jpg);
-  background-position-y: center;
-  background-size: 25rem 15rem;
-  height: 7rem;
+  background-image: url(../../../assets/images/bakery.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  height: 100%;
   position: absolute;
   top: 0;
   width: 100%;
@@ -13,7 +13,7 @@
   width: 100%;
   position: relative;
   margin: 0 auto;
-  margin-top: 65px;
+  margin-top: 35px;
 }
 .card-container {
   position: relative;
@@ -22,56 +22,17 @@
   width: 200px;
   height: 10px;
 }
-@media screen and (min-width: 375px) {
-  .img {
-    background-size: 28rem 15rem;
-  }
-}
-@media screen and (min-width: 425px) {
-  .img {
-    background-size: 42rem 25rem;
-    background-position-y: -8rem;
-  }
-}
-@media screen and (min-width: 576px) {
-  .img {
-    background-size: 47rem 24rem;
-  }
-}
+
 @media screen and (min-width: 768px) {
-  .img {
-    height: 10rem;
-    background-size: 64rem 30rem;
-    background-position-y: -8rem;
-  }
   .spacer {
     height: 40px;
   }
   .search-container {
-    margin-top: 8rem;
+    margin-top: 4rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  .img {
-    height: 12rem;
-    background-size: 95rem 50rem;
-    background-position-y: -16rem;
-  }
   .search-container {
-    margin-top: 9.5rem;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .img {
-    height: 12rem;
-    background-size: 120rem 60rem;
-    background-position-y: -19rem;
-  }
-}
-@media screen and (min-width: 1660px) {
-  .img {
-    height: 12rem;
-    background-size: 135rem 70rem;
-    background-position-y: -25rem;
+    margin-top: 5rem;
   }
 }

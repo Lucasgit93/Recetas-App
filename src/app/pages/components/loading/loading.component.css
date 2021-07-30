@@ -1,11 +1,10 @@
-/*-----------Loading Component---------------*/
-
 .loading{
     width: 150px;
     height: 100px;
     margin: auto;
     padding-left: 10px;
     text-align: center;
+    margin-top: 80px;
 }
 
 .bar {
@@ -53,3 +52,8 @@
     }
 }
 
+@media screen and (min-width: 1024px) {
+    .loading{
+        margin-top: 120px;
+    }
+}

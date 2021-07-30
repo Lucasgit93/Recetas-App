@@ -1,8 +1,9 @@
 .img {
-  background: center no-repeat url(../../../assets/images/pastry.jpg);
-  background-position-y: center;
-  background-size: 25rem 20rem;
-  height: 7rem;
+  background-image: url(../../../assets/images/pastry.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  height: 100%;
   position: absolute;
   top: 0;
   width: 100%;
@@ -12,7 +13,7 @@
   width: 100%;
   position: relative;
   margin: 0 auto;
-  margin-top: 65px;
+  margin-top: 35px;
 }
 .card-container {
   position: relative;
@@ -22,64 +23,16 @@
   height: 10px;
 }
 
-
-@media screen and (min-width: 375px) {
-  .img {
-    background-size: 30rem 15rem;
-  }
-}
-@media screen and (min-width: 425px) {
-  .img {
-    background-position-y: -7rem;
-    background-size: 45rem 25rem;
-  }
-  .red{
-    margin-left: 10px;
-  }
-}
-@media screen and (min-width: 576px) {
-  .img {
-    background-size: 55rem 25rem;
-  }
-}
 @media screen and (min-width: 768px) {
-  .img {
-    height: 10rem;
-    background-size: 75rem 40rem;
-    background-position-y: -12rem;
-  }
   .spacer {
     height: 40px;
   }
   .search-container {
-    margin-top: 8rem;
-  }
-  .red{
-    margin-left: 0;
+    margin-top: 4rem;
   }
 }
 @media screen and (min-width: 1024px) {
-  .img {
-    height: 12rem;
-    background-size: 95rem 55rem;
-    background-position-y: -15rem;
-  }
-
   .search-container {
-    margin-top: 9.5rem;
-  }
-}
-@media screen and (min-width: 1440px) {
-  .img {
-    height: 12rem;
-    background-size: 120rem 53rem;
-    background-position-y: -15rem;
-  }
-}
-@media screen and (min-width: 1660px) {
-  .img {
-    height: 12rem;
-    background-size: 135rem 55rem;
-    background-position-y: -15rem;
+    margin-top: 5rem;
   }
 }
