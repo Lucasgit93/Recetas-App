@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../../shared/services/recipe-service.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Recipe } from '../interface/recipe.interface';
 
 @Component({
@@ -13,13 +13,13 @@ export class RecipeComponent implements OnInit {
 
   isLoading: boolean = true;
   isModal: boolean = false;
+  isLoggedIn: boolean = false;
   _id!: string;
   routeId!: string;
 
   constructor(
     private recipeService: RecipeService,
     private route: ActivatedRoute,
-    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -35,7 +35,7 @@ export class RecipeComponent implements OnInit {
           }
         });
     });
-
+    this.loggedIn();
     this.routeId = this.route.snapshot.params.id;
   }
 
@@ -53,5 +53,15 @@ export class RecipeComponent implements OnInit {
     this.isModal = false;
     this.recipeService.deleteRecipe(this._id).subscribe();
     this.recipeService.routeNavigation(recipeMenu);
+  }
+
+
+
+  loggedIn(){
+    if(localStorage.getItem('token')){
+      return this.isLoggedIn = true;
+    }else{
+      return this.isLoggedIn = false;
+    }
   }
 }

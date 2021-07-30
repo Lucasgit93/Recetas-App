@@ -1,6 +1,6 @@
 <section>
   <div class="img"></div>
-  
+
   <div class="loading-container" *ngIf="isLoading; else isNotLoading">
     <app-loading></app-loading>
   </div>
@@ -53,9 +53,17 @@
             </div>
           </div>
           <div class="container">
-            <button type="submit" [ngClass]="{ disabled: myForm.invalid }">
-              Agregar
-            </button>
+            <img
+              src="../../../assets/images/check.svg"
+              alt="success"
+              width="50"
+              *ngIf="isSuccess; else submit"
+            />
+            <ng-template #submit>
+              <button type="submit" [ngClass]="{ disabled: myForm.invalid }">
+                Agregar
+              </button>
+            </ng-template>
           </div>
         </div>
       </form>

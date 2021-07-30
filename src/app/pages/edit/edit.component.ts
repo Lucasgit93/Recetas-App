@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RecipeService } from '../../shared/services/recipe-service.service';
 import { Recipe } from '../interface/recipe.interface';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-edit',
@@ -13,6 +13,7 @@ export class EditComponent implements OnInit {
   recipe!: Recipe;
 
   isLoading: boolean = true;
+  isSuccess: boolean = false;
 
   get _id() {
     const { id } = this.route.snapshot.params;
@@ -30,8 +31,7 @@ export class EditComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private recipeService: RecipeService,
-    private route: ActivatedRoute,
-    private router: Router
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -41,10 +41,7 @@ export class EditComponent implements OnInit {
         .subscribe(({ bakery, pastry, chocolatier }) => {
           if (bakery || pastry || chocolatier !== null) {
             this.recipe = bakery || pastry || chocolatier;
-            this.myForm.get('title')!.setValue(this.recipe.title);
-            this.myForm.get('ingredients')!.setValue(this.recipe.ingredients);
-            this.myForm.get('preparation')!.setValue(this.recipe.preparation);
-            this.myForm.get('menu')!.setValue(this.recipe.menu);
+            this.formValues();
             this.isLoading = false;
           } else {
             this.isLoading = true;
@@ -64,6 +61,16 @@ export class EditComponent implements OnInit {
       file,
       this._id
     );
-    this.recipeService.routeNavigation(recipeMenu);
+    this.isSuccess = true;
+    setTimeout(() => {
+      this.recipeService.routeNavigation(recipeMenu);
+    }, 1200);
+  }
+
+  formValues() {
+    this.myForm.get('title')!.setValue(this.recipe.title);
+    this.myForm.get('ingredients')!.setValue(this.recipe.ingredients);
+    this.myForm.get('preparation')!.setValue(this.recipe.preparation);
+    this.myForm.get('menu')!.setValue(this.recipe.menu);
   }
 }

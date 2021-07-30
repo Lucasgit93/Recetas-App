@@ -52,6 +52,10 @@
   justify-content: center;
 }
 
+img{
+  animation: rotate .8s ease-in-out;
+}
+
 button {
   transition: background-color 0.3s ease-in;
   background-color: #3333e0;
@@ -166,4 +170,15 @@ select {
     background-size: 135rem 70rem;
     background-position-y: -25rem;
   }
+}
+
+
+@keyframes rotate {
+  0%{
+    transform: rotateZ(0);
+  }
+  100%{
+    transform: rotateZ(360deg);
+  }
+
 }

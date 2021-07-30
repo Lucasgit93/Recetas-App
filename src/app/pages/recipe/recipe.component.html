@@ -19,7 +19,7 @@
           {{ recipe.preparation }}
         </p>
       </div>
-      <div class="btn-container">
+      <div class="btn-container" *ngIf="isLoggedIn">
         <div class="btn-del-container">
           <button class="btn-del" (click)="recipeDelete(recipe._id)">
             Borrar
