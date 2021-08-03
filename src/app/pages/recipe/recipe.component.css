@@ -14,17 +14,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 .main-container {
   display: inherit;
   width: 18.5rem;
   align-items: center;
   flex-direction: column;
-  height: fit-content;
-  background-color: wheat;
+  height: 40rem;
+  background-color: rgba(168, 153, 125, 0.541);
+  backdrop-filter: blur(10px);
   border-radius: 10px;
-  margin-bottom: 20px;
 }
 .img-container {
   width: 100%;
@@ -37,12 +37,12 @@ img {
   border-radius: 10px 10px 0 0;
 }
 .title-container {
-  font-size: 2rem;
+  font-size: 1.65rem;
   margin: 10px 0;
 }
 .ingredients-container,
 .desc-container {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   margin-top: 10px;
   padding: 2px 5px;
   width: 95%;
@@ -51,8 +51,15 @@ img {
 .desc {
   word-wrap: break-word;
   white-space: pre-line;
-}
+  overflow-y: scroll;
 
+}
+.ingredients{
+  max-height: 6.5rem;
+}
+.desc{
+  max-height: 18rem;
+}
 .btn-container {
   width: 100%;
   display: flex;
@@ -76,6 +83,21 @@ img {
   cursor: pointer;
 }
 
+.main-delete-container{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 6rem;
+  width: 100%;
+}
+.delete-container{
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: none;
+  letter-spacing: 1px;
+}
+
 /*------------MEDIA---------------------*/
 
 @media screen and (min-width: 375px) {
@@ -95,18 +117,29 @@ img {
   }
   .main-container {
     width: 45rem;
+    height: 47rem;
   }
   .title-container {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .ingredients-container,
   .desc-container {
     font-size: 1.3rem;
   }
+
 }
 @media screen and (min-width: 1024px) {
   .container {
-    margin-top: 110px;
+    margin-top: 50px;
+  }
+.main-container{
+  height: 50rem;
+}
+  .ingredients{
+    max-height: 8rem;
+  }
+  .desc{
+    max-height: 19rem;
   }
   .btn-del,
   .btn-edit {

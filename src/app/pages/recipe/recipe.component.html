@@ -3,7 +3,7 @@
   <div class="container" *ngIf="!isLoading">
     <div class="main-container">
       <div class="img-container">
-        <img src="../../../assets/images/chipa.jpg" alt="30" />
+        <img [src]="recipe.file" alt="30" />
       </div>
       <div class="title-container">
         <h1>{{ recipe.title | titlecase }}</h1>
@@ -31,6 +31,12 @@
       </div>
     </div>
   </div>
+  <div *ngIf="isDeleting" [ngClass]="{animate__fadeOut: isVanished}" class="main-delete-container animate__animated animate__fadeIn">
+    <div class="delete-container">
+      <h1>Borrando receta...</h1>
+    </div>
+  </div>
   <app-modal (onCancel)="cancel( $event )" (onDelete)="delete( $event )" *ngIf="isModal"></app-modal>
   <app-loading *ngIf="isLoading"></app-loading>
 </section>
+

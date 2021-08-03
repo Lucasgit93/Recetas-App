@@ -21,6 +21,14 @@ time, mark, audio, video {
 }
 
 
+
 body{
 	background-color: #000;
 }
+
+h1, span{
+	font-family: 'Archivo Black', sans-serif;
+  }
+p, label{
+	font-family: 'Roboto', sans-serif;
+  }

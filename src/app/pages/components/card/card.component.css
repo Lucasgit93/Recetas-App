@@ -8,14 +8,14 @@
   background-color: #ffffff54;
   backdrop-filter: blur(5px);
   border: none;
-  box-shadow:  5px 4px 5px rgba(0, 0, 0, 0.425);
+  box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.425);
   display: flex;
   flex-direction: row;
   height: 80px;
   width: 200px;
   border-radius: 10px;
   cursor: pointer;
-  transition: all .2s ease-in;
+  transition: all 0.2s ease-in;
   transform: translateY(6px);
   margin-top: 15px;
   word-break: break-all;
@@ -41,15 +41,37 @@
   height: 80.5px;
   border-radius: 10px 0 0 10px;
 }
-.recipe-text{
+.recipe-text {
   margin-left: 3px;
 }
 
-
-.card:hover{
-  transition: all .2s ease-in;
+.card:hover {
+  transition: all 0.2s ease-in;
   transform: translateY(-1px);
 }
+
+
+.pagination-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.pagination{
+  margin-top: 25px;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+
+}
+.control{
+  position: relative;
+  top: 6px;
+}
+
+
 
 @media screen and (min-width: 375px) {
   .card {

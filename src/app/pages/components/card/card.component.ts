@@ -8,15 +8,24 @@ import { Recipe } from '../../interface/recipe.interface';
 })
 export class CardComponent implements AfterViewInit  {
 
-  @Input() recipes: Recipe[] = [];
 
+  
+  
+  
+  @Input() recipes: Recipe[] = [];
+  
+  
+  p: number = 1;
+
+  count: number = 5;
+  maxSize: number = 5
 
   constructor() { }
 
-ngAfterViewInit(): void {
+  ngAfterViewInit(): void {
 
   
-}
+  }
 
 
 

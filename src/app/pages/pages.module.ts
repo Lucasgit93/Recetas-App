@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import {NgxPaginationModule} from 'ngx-pagination';
 import { PagesRoutingModule } from './pages-routing.module';
+
+
 import { PastryComponent } from './pastry/pastry.component';
 import { ChocolatierComponent } from './chocolatier/chocolatier.component';
 import { BakeryComponent } from './bakery/bakery.component';
@@ -35,7 +38,8 @@ import { EditComponent } from './edit/edit.component';
   imports: [
     CommonModule,
     PagesRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class PagesModule { }

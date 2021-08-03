@@ -14,6 +14,10 @@ export class RecipeComponent implements OnInit {
   isLoading: boolean = true;
   isModal: boolean = false;
   isLoggedIn: boolean = false;
+  isVanished: boolean = false;
+  isDeleting: boolean = false;
+
+
   _id!: string;
   routeId!: string;
 
@@ -48,11 +52,18 @@ export class RecipeComponent implements OnInit {
     this.isModal = false;
   }
 
-  delete(input: boolean) {
+ async delete(input: boolean) {
+   this.isDeleting = true;
     const recipeMenu = this.recipe.menu;
     this.isModal = false;
+    (await this.recipeService.imgDelete( this._id ).subscribe())
     this.recipeService.deleteRecipe(this._id).subscribe();
-    this.recipeService.routeNavigation(recipeMenu);
+    setTimeout(() => {
+      this.isVanished = true;
+      setTimeout(() => {
+        this.recipeService.routeNavigation(recipeMenu);
+      }, 500);
+    }, 500);
   }
 
 

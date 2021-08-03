@@ -2,13 +2,13 @@
   <form class="form-container" [formGroup]="myForm" (ngSubmit)="submit()">
     <div class="background">
       <div class="container">
-        <label for="">Titulo</label>
+        <label for="">Titulo*</label>
         <div>
-          <input type="text" formControlName="title" class="title-container"/>
+          <input type="text" formControlName="title" class="title-container" />
         </div>
       </div>
       <div class="container text-area">
-        <label for="">Ingredientes</label>
+        <label for="">Ingredientes*</label>
         <div>
           <textarea
             name="ingredients"
@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="container text-area">
-        <label for="desc">Preparacion</label>
+        <label for="desc">Preparacion*</label>
         <div>
           <textarea
             name="preparation"
@@ -33,7 +33,7 @@
       </div>
       <div class="container">
         <div>
-          <label for="menu" class="bottom-input">Especialidad</label>
+          <label for="menu" class="bottom-input">Especialidad*</label>
           <select name="menu" id="menu" formControlName="menu">
             <option value="Pasteleria">Pasteleria</option>
             <option value="Panaderia">Panaderia</option>
@@ -41,12 +41,38 @@
           </select>
         </div>
         <div>
-          <input type="file" name="file" id="file" formControlName="file"/>
+          <input
+            type="file"
+            name="file"
+            id="file"
+            (change)="imgUpload($event)"
+          />
         </div>
       </div>
       <div class="container">
-        <button type="submit">Agregar</button>
+        <button
+          type="submit"
+          [ngClass]="{ disabled: myForm.invalid }"
+          [disabled]="myForm.invalid"
+          *ngIf="!isLoading; else loading"
+        >
+          Agregar
+        </button>
+
+        <ng-template #loading>
+          <div class="bar1 bar"></div>
+          <div class="bar2 bar"></div>
+          <div class="bar3 bar"></div>
+        </ng-template>
+
+        
+        
       </div>
     </div>
   </form>
+  <div class="main-success-container animate__animated animate__fadeIn" [ngClass]="{animate__fadeOut: isVanished}" *ngIf="isSuccess">
+    <div class="success-container">
+        <h1 class="success-title">Receta agregada!</h1>
+      </div>
+  </div>
 </section>

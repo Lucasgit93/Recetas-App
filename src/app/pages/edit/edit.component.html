@@ -9,13 +9,13 @@
       <form *ngIf="!isLoading" [formGroup]="myForm" (ngSubmit)="editRecipe()">
         <div class="background">
           <div class="container">
-            <label for="">Titulo</label>
+            <label for="">Titulo*</label>
             <div>
               <input class="recipe-title" type="text" formControlName="title" />
             </div>
           </div>
           <div class="container text-area">
-            <label for="">Ingredientes</label>
+            <label for="">Ingredientes*</label>
             <div>
               <textarea
                 name="ingredients"
@@ -23,12 +23,11 @@
                 cols="30"
                 rows="10"
                 formControlName="ingredients"
-                value="recipe.ingredients"
               ></textarea>
             </div>
           </div>
           <div class="container text-area">
-            <label for="desc">Preparacion</label>
+            <label for="desc">Preparacion*</label>
             <div>
               <textarea
                 name="preparation"
@@ -41,7 +40,7 @@
           </div>
           <div class="container">
             <div>
-              <label for="menu" class="bottom-input">Especialidad</label>
+              <label for="menu" class="bottom-input">Especialidad*</label>
               <select name="menu" id="menu" formControlName="menu">
                 <option value="Pasteleria">Pasteleria</option>
                 <option value="Panaderia">Panaderia</option>
@@ -49,7 +48,7 @@
               </select>
             </div>
             <div>
-              <input type="file" name="file" id="file" formControlName="file" />
+              <input type="file" name="file" id="file" (change)="imgUpload( $event )" />
             </div>
           </div>
           <div class="container">
@@ -60,13 +59,18 @@
               *ngIf="isSuccess; else submit"
             />
             <ng-template #submit>
-              <button type="submit" [ngClass]="{ disabled: myForm.invalid }">
+              <button type="submit" [ngClass]="{ disabled: myForm.invalid }" [disabled]="myForm.invalid">
                 Agregar
               </button>
             </ng-template>
           </div>
         </div>
       </form>
+      <div *ngIf="isUpdating" [ngClass]="{animate__fadeOut: isVanished}" class="main-updating-container animate__animated animate__fadeIn">
+        <div class="updating-container">
+          <h1>Actualizando receta...</h1>
+        </div>
+      </div>
     </div>
   </ng-template>
 </section>

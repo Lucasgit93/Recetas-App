@@ -45,6 +45,20 @@
 .container:nth-child(5) {
   margin-top: 25px;
 }
+.main-success-container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 6rem;
+  width: 100%;
+}
+.success-container {
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: none;
+  letter-spacing: 1px;
+}
 
 button {
   transition: background-color 0.3s ease-in;
@@ -64,6 +78,26 @@ select {
 
 .disabled {
   background-color: rgb(109, 106, 106);
+}
+.bar {
+  margin-left: 10px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+}
+
+.bar1 {
+  animation: jump 1s ease-in-out infinite;
+}
+
+.bar2 {
+  animation: jump 1s ease-in-out infinite 0.2s;
+}
+
+.bar3 {
+  animation: jump 1s ease-in-out infinite 0.3s;
 }
 
 /*--------------------------------*/
@@ -110,5 +144,20 @@ select {
 @media screen and (min-width: 1024px) {
   #menu {
     width: 8rem;
+  }
+  .main-success-container {
+    top: 9rem;
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }

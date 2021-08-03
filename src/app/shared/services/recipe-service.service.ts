@@ -21,6 +21,10 @@ export class RecipeService {
   private _user!: User;
   private _history: string[] = [];
 
+
+
+
+
   get user() {
     return { ...this._user };
   }
@@ -78,6 +82,7 @@ export class RecipeService {
   ) {
     const url = `${this.baseUrl}/new`;
     const body = { title, ingredients, preparation, menu, file };
+
     const headers = new HttpHeaders().set(
       'token',
       localStorage.getItem('token') || ''
@@ -88,6 +93,8 @@ export class RecipeService {
       catchError((err) => of(err.error.msg))
     );
   }
+
+
 
   editRecipe(
     title: string,
@@ -119,8 +126,26 @@ export class RecipeService {
   }
 
 
+   imgUpload( data: any){
+    
+    const url = `${this.baseUrl}/upload`;
 
+  return this.http.post<any>(url, data );
 
+  }
+
+  imgUpdate( data: any, id: string ){
+    const url = `${ this.baseUrl }/upload/${ id }`
+
+    return this.http.put<any>( url, data);
+  }
+
+  imgDelete( id: string ){
+  const url = `${ this.baseUrl }/upload/${ id }`;
+
+  return this.http.delete<any>( url );
+    
+  }
 
   routeNavigation(recipeMenu: string){
     switch (recipeMenu) {

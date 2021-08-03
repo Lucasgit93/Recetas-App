@@ -10,8 +10,8 @@ import { RecipeService } from '../../shared/services/recipe-service.service';
 export class LoginComponent implements OnInit {
 
   myForm: FormGroup = this.formBuilder.group({
-    username: ['admin', [Validators.required]],
-    password: ['admintest', [Validators.required]],
+    username: ['', [Validators.required]],
+    password: ['', [Validators.required]],
   });
 
   isLoggedIn: boolean = false;

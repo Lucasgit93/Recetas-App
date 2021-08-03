@@ -11,9 +11,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditComponent implements OnInit {
   recipe!: Recipe;
-
   isLoading: boolean = true;
   isSuccess: boolean = false;
+  isUpdating: boolean = false;
+  isVanished: boolean = false;
 
   get _id() {
     const { id } = this.route.snapshot.params;
@@ -22,11 +23,13 @@ export class EditComponent implements OnInit {
 
   myForm: FormGroup = this.fb.group({
     title: ['', Validators.required],
-    ingredients: [''],
-    preparation: [''],
+    ingredients: ['', Validators.required],
+    preparation: ['', Validators.required],
     menu: ['', Validators.required],
-    file: [''],
+    file: '',
   });
+
+  file!: File;
 
   constructor(
     private fb: FormBuilder,
@@ -50,21 +53,48 @@ export class EditComponent implements OnInit {
     });
   }
 
-  editRecipe() {
-    const recipeMenu = this.recipe.menu;
-    const { title, ingredients, preparation, menu, file } = this.myForm.value;
-    this.recipeService.editRecipe(
-      title,
-      ingredients,
-      preparation,
-      menu,
-      file,
-      this._id
+  imgUpload(e: any) {
+    if (e.target.files && e.target.files.length > 0) {
+      this.file = e.target.files[0];
+    }
+  }
+
+  async editRecipe() {
+    this.isUpdating = true;
+    const formData = new FormData();
+
+    formData.append('file', this.file);
+    (await this.recipeService.imgUpdate(formData, this._id)).subscribe(
+      (imgUrl) => {
+        setTimeout(() => {
+          this.isVanished = true;
+          setTimeout(() => {
+            this.isUpdating = false;
+          }, 750);
+        }, 500);
+        this.isSuccess = true;
+        this.myForm.get('file')?.setValue(imgUrl);
+
+        //recipeMenu toma el valor del form para navegar nuevamente a la pagina de donde vino
+        //el usuario.
+        const recipeMenu = this.recipe.menu;
+
+        const { title, ingredients, preparation, menu, file } =
+          this.myForm.value;
+
+        this.recipeService.editRecipe(
+          title,
+          ingredients,
+          preparation,
+          menu,
+          file,
+          this._id
+        );
+        setTimeout(() => {
+          this.recipeService.routeNavigation(recipeMenu);
+        }, 1250);
+      }
     );
-    this.isSuccess = true;
-    setTimeout(() => {
-      this.recipeService.routeNavigation(recipeMenu);
-    }, 1200);
   }
 
   formValues() {

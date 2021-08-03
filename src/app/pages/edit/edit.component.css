@@ -55,8 +55,23 @@
   justify-content: center;
 }
 
+.main-updating-container{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 6rem;
+  width: 100%;
+}
+.updating-container{
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: none;
+  letter-spacing: 1px;
+}
+
 img {
-  animation: rotate 0.8s ease-in-out;
+  animation: rotate 1s ease-in-out;
 }
 
 button {
