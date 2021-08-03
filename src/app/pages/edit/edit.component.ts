@@ -37,6 +37,9 @@ export class EditComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
+  //al inicializar el componente se trae del backend la informacion de la receta a editar
+  //agregando todo el valor de la misma en los campos a actualizar/corregir mediante la 
+  //funcion formValues().
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.recipeService
@@ -53,6 +56,15 @@ export class EditComponent implements OnInit {
     });
   }
 
+  formValues() {
+    return (
+      this.myForm.get('title')!.setValue(this.recipe.title),
+      this.myForm.get('ingredients')!.setValue(this.recipe.ingredients),
+      this.myForm.get('preparation')!.setValue(this.recipe.preparation),
+      this.myForm.get('menu')!.setValue(this.recipe.menu)
+    );
+  }
+  //validacion de imagen antes de establecerle el valor a la variable file
   imgUpload(e: any) {
     if (e.target.files && e.target.files.length > 0) {
       this.file = e.target.files[0];
@@ -61,8 +73,29 @@ export class EditComponent implements OnInit {
 
   async editRecipe() {
     this.isUpdating = true;
-    const formData = new FormData();
+    this.imgUpdate();
+    //recipeMenu toma el valor del form para navegar nuevamente a la pagina de donde vino
+    //el usuario.
+    const recipeMenu = this.recipe.menu;
+    const { title, ingredients, preparation, menu, file } = this.myForm.value;
+    this.recipeService.editRecipe(
+      title,
+      ingredients,
+      preparation,
+      menu,
+      file,
+      this._id
+    );
+    setTimeout(() => {
+      this.recipeService.routeNavigation(recipeMenu);
+    }, 1250);
+  }
 
+  //Funcion que recibe la img subida por el usuario y la envia al backend
+  //subiendola en el proceso a Cloudinary y retornando el URL para actualizar la img mostrada
+  //tanto en la card como en la receta en si.
+  async imgUpdate() {
+    const formData = new FormData();
     formData.append('file', this.file);
     (await this.recipeService.imgUpdate(formData, this._id)).subscribe(
       (imgUrl) => {
@@ -74,33 +107,7 @@ export class EditComponent implements OnInit {
         }, 500);
         this.isSuccess = true;
         this.myForm.get('file')?.setValue(imgUrl);
-
-        //recipeMenu toma el valor del form para navegar nuevamente a la pagina de donde vino
-        //el usuario.
-        const recipeMenu = this.recipe.menu;
-
-        const { title, ingredients, preparation, menu, file } =
-          this.myForm.value;
-
-        this.recipeService.editRecipe(
-          title,
-          ingredients,
-          preparation,
-          menu,
-          file,
-          this._id
-        );
-        setTimeout(() => {
-          this.recipeService.routeNavigation(recipeMenu);
-        }, 1250);
       }
     );
-  }
-
-  formValues() {
-    this.myForm.get('title')!.setValue(this.recipe.title);
-    this.myForm.get('ingredients')!.setValue(this.recipe.ingredients);
-    this.myForm.get('preparation')!.setValue(this.recipe.preparation);
-    this.myForm.get('menu')!.setValue(this.recipe.menu);
   }
 }

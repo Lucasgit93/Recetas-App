@@ -135,6 +135,9 @@ img {
 .main-container{
   height: 50rem;
 }
+.desc{
+  height: 25rem;
+}
   .ingredients{
     max-height: 8rem;
   }

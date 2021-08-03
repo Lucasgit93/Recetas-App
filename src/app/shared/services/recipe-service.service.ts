@@ -50,6 +50,8 @@ export class RecipeService {
     );
   }
 
+
+  /*-----------CRUD--------------- */
   getRecipes(): Observable<any> {
     const urlParam = this.router.url.split('/')[2];
 
@@ -94,8 +96,6 @@ export class RecipeService {
     );
   }
 
-
-
   editRecipe(
     title: string,
     ingredients: string,
@@ -126,13 +126,14 @@ export class RecipeService {
   }
 
 
+
+  /* ---------carga/actualizacion/borrado de imgs-------- */
    imgUpload( data: any){
-    
     const url = `${this.baseUrl}/upload`;
-
   return this.http.post<any>(url, data );
-
   }
+
+
 
   imgUpdate( data: any, id: string ){
     const url = `${ this.baseUrl }/upload/${ id }`
@@ -147,6 +148,11 @@ export class RecipeService {
     
   }
 
+
+
+
+
+  
   routeNavigation(recipeMenu: string){
     switch (recipeMenu) {
       case "Panaderia":
