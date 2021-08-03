@@ -18,8 +18,8 @@ export class NewRecipeComponent {
 
   file!: File;
   isLoading: boolean = false;
-  isSuccess: boolean = true;
-  isVanished: boolean = false;
+  isSuccess: boolean = false;
+  isVanished: boolean = true;
 
   constructor(private fb: FormBuilder, private recipeService: RecipeService) {}
 

@@ -106,6 +106,9 @@ select {
     position: relative;
     top: 40px;
   }
+  .main-updating-container{
+    top: -.5rem;
+  }
 }
 
 @media screen and (min-width: 768px) {
