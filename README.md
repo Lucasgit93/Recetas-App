@@ -4,4 +4,7 @@ Una pagina de recetas diseñada en Angular y Express, usando MongoDB para almace
 
 **El backend esta subido a Heroku por lo tanto puede tardar un poco en aparecer las recetas.**
 
-*Se puede ver en el siguiente link --> https://libro-de-recetas.netlify.app/*
+*Se puede ver en el siguiente link --> [Libro de recetas](https://libro-de-recetas.netlify.app/)*
+
+
+
